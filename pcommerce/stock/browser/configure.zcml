@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="pcommerce">
+
+    <browser:page
+        for="pcommerce.core.interfaces.IProduct"
+        class=".stock.Stock"
+        name="stock"
+        permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IStockable"
+        />
+
+    <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="cart"
+        class=".cart.Cart"
+        permission="pcommerce.AddToCart"
+        layer="..interfaces.IStockable"
+        />
+
+    <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="checkout"
+        class=".checkout.Checkout"
+        permission="pcommerce.CheckOut"
+        layer="..interfaces.IStockable"
+        />
+
+    <plone:portletRenderer
+        portlet="pcommerce.core.browser.portlets.cart.IShoppingCartPortlet"
+        class=".cart.Renderer"
+        layer="..interfaces.IStockable"
+        />
+
+</configure>

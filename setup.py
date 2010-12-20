@@ -24,7 +24,8 @@ setup(name='pcommerce.stock',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'pcommerce.core',
+          'archetypes.schemaextender',
+          'pcommerce.core>=1.0b4',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

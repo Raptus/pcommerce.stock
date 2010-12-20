@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xml:lang="en" lang="en"
+      i18n:domain="plone"
+      metal:use-macro="here/main_template/macros/master">
+
+  <head>
+      <metal:block fill-slot="top_slot">
+        <tal:insert tal:replace="nothing"
+              tal:define="dummy python:request.set('enable_border', 1)" />
+      </metal:block>
+  </head>
+
+  <body>
+
+    <div metal:fill-slot="main"
+         i18n:domain="pcommerce">
+
+      <h1 class="documentFirstHeading" i18n:domain="pcommerce" i18n:translate="">
+        Stock information
+      </h1>
+
+      <form action="" method="post">
+        <table class="listing">
+          <thead>
+            <tr>
+              <th i18n:translate="">
+                Item
+              </th>
+              <th i18n:translate="">
+                Stock
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="item view/stockable">
+              <td>
+                <label for=""
+                       tal:attributes="for item/key"
+                       tal:content="item/title">
+                  Title
+                </label>
+              </td>
+              <td>
+                <div tal:attributes="class python: view.errors.has_key(item['key']) and 'field error' or ''">
+                  <div class="fieldErrorBox"
+                       tal:condition="python: view.errors.has_key(item['key'])"
+                       tal:content="python: view.errors[item['key']]">
+                    Error
+                  </div>
+                  <input type="text" name="" id="" value="0"
+                         tal:attributes="name item/key;
+                                         id item/key;
+                                         value item/value" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="formControls">
+          <input type="submit" class="context" name="stock.submitted" value="save"
+                 i18n:domain="plone" i18n:attributes="value label_save" />
+        </div>
+
+    </div>
+
+  </body>
+</html>

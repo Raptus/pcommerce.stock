@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<layers>
+  <layer name="pcommerce.stock.layer" 
+         interface="pcommerce.stock.interfaces.IStockable" />
+</layers>
