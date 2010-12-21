@@ -17,7 +17,7 @@ def decreaseStockFromOrder(registry, order):
             variations = [v[0] for v in product[5]]
             stock.setVariationStock(stock.variationStock(variations)-product[3], variations)
         else:
-            stock.setStock(stock.getStock()-product[3])
+            stock.setStock(stock.stock()-product[3])
     order.stock_state = DECREASED
 
 def decreaseStockFromOrderSubscriber(event):
@@ -38,7 +38,7 @@ def increaseStockFromOrder(registry, order):
             variations = [v[0] for v in product[5]]
             stock.setVariationStock(stock.variationStock(variations)+product[3], variations)
         else:
-            stock.setStock(stock.getStock()+product[3])
+            stock.setStock(stock.stock()+product[3])
     order.stock_state = INCREASED
 
 def increaseStockFromOrderSubscriber(event):

@@ -73,8 +73,8 @@ class Stock(object):
             return [[variations_by_uid[uid] for uid in keys] for keys in comp]
         elif len(variations.keys()) == 1: # one variation type
             if KEY:
-                return variations.items()[0]
-            return [[variations_by_uid[uid] for uid in variations.items()[0]],]
+                return variations.values()[0]
+            return [[variations_by_uid[uid],] for uid in variations.values()[0]]
         else: # no variations at all
             return None
     
