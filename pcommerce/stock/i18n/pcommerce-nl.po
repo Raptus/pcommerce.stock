@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: pcommerce.stock\n"
+"POT-Creation-Date: 2011-08-31 15:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Albert Peschar <albert@lapisit.nl>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: nl\n"
+"Language-Name: Nederlands\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: pcommerce\n"
+
+#: browser/stock.py:27
+msgid "Failed to save some stock information"
+msgstr "Bij het opslaan van de voorraadinformatie is een fout opgetreden"
+
+#. Default: "Item"
+#: browser/stock.pt:29
+msgid "Item"
+msgstr "Artikel"
+
+#. Default: "Stock"
+#: browser/stock.pt:32
+msgid "Stock"
+msgstr "Voorraad"
+
+#. Default: "Stock information"
+#: browser/stock.pt:21
+msgid "Stock information"
+msgstr "Voorraad bestand"
+
+#: browser/stock.py:24
+msgid "Stock information successfully stored"
+msgstr "Voorraad bestand opgeslagen"
+
+#. Default: "There are only ${number} items in stock"
+#: browser/cart.pt:62
+msgid "There are only ${number} items in stock"
+msgstr "Er zijn nog ${number} artikelen op voorraad"
+
+#: browser/stock.py:64
+msgid "There was an error when saving this stock entry"
+msgstr "Bij het opslaan van het voorraad bestand is een fout opgetreden"
+
+#. Default: "This item is currently out of stock"
+#: browser/cart.pt:54
+msgid "This item is currently out of stock"
+msgstr "Dit artikel is momenteel niet voorradig"
+
+#. Default: "You have items in your cart which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
+#: browser/cart.pt:120
+msgid ""
+"You have items in your cart which are either out of stock or of which are "
+"not enough available in stock. Please adjust your cart to proceed."
+msgstr ""
+"In het winkelmandje zijn artikelen die niet (voldoende) op voorraad zijn. "
+"Wijzig uw bestelling om verder te kunnen gaan met uw bestelling."
+
+#. Default: "Allow checkout if this product is out of stock"
+#: extender.py:31
+msgid "label_outofstock_checkout"
+msgstr "Bestelling ook mogelijk als het artikel niet voorradig is."
