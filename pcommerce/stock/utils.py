@@ -1,7 +1,7 @@
 from Products.CMFCore.utils import getToolByName
 
 from pcommerce.core.config import INITIALIZED, CANCELED, FAILED, SENT, PROCESSED
-from pcommerce.core.interfaces import IOrderSentEvent, ISteps, IRequiredComponents, IOrderCanceledEvent
+from pcommerce.core.interfaces import IOrderSentEvent, ISteps, IRequiredComponents, IOrderCanceledEvent, IOrderProcessingSuccessfulEvent
 from pcommerce.stock.interfaces import IStock
 
 INCREASED = 1

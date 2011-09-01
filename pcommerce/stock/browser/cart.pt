@@ -1,12 +1,17 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-      lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en" lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
 <body>
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-                    i18n:domain="pcommerce">
+                    i18n:domain="pcommerce"
+      tal:define="isAnon context/@@plone_portal_state/anonymous;">
                       
       <h1 class="documentFirstHeading" i18n:translate="">
         Your shopping cart
@@ -112,7 +117,11 @@
           have an account or head over to the
           <a href=""
              i18n:name="registration_form"
-             tal:attributes="href string:${portal_url}/join_form"
+             tal:define="
+              old_plone template_id | nothing;
+              reg_link python: old_plone and 'join_form' or '@@register';
+              "
+             tal:attributes="href string:${portal_url}/${reg_link}"
              i18n:translate="registration_form">
               registration form</a>
           if you don't.
