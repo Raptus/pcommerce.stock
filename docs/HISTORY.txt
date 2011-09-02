@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0a4 (2011-09-02)
+------------------
+
+* Fixed dutch translations (wrong i18n domain)
+
 1.0a3 (2011-09-01)
 ------------------
 
