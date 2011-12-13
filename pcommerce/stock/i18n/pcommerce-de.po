@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pcommerce.stock\n"
-"POT-Creation-Date: 2010-12-15 14:32+0000\n"
+"POT-Creation-Date: 2011-12-13 10:02+0000\n"
 "PO-Revision-Date: 2010-12-15 14:16+0000\n"
 "Last-Translator: Simon Kaeser <skaeser@raptus.com>\n"
 "Language-Team: Deutsch <skaeser@raptus.com>\n"
@@ -42,30 +42,30 @@ msgid "Stock information successfully stored"
 msgstr "Lagerbestände erfolgreich gespeichert"
 
 #. Default: "There are only ${number} items in stock"
-#: browser/cart.pt:62
+#: browser/cart.pt:67
 msgid "There are only ${number} items in stock"
-msgstr "Es sind nur noch ${number} Artikel an Lager"
+msgstr "Es sind nur noch ${number} Artikel am Lager"
 
 #: browser/stock.py:64
 msgid "There was an error when saving this stock entry"
 msgstr "Beim Speichern dieses Lagerbestandes ist ein Fehler aufgetreten"
 
 #. Default: "This item is currently out of stock"
-#: browser/cart.pt:54
+#: browser/cart.pt:59
 msgid "This item is currently out of stock"
-msgstr "Dieser Artikel ist momentan nicht an Lager"
+msgstr "Dieser Artikel ist momentan nicht am Lager"
 
-#. Default: "You have items in your cart which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
-#: browser/cart.pt:120
+#. Default: "You have items in your cart, which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
+#: browser/cart.pt:129
 msgid ""
-"You have items in your cart which are either out of stock or of which are "
+"You have items in your cart, which are either out of stock or of which are "
 "not enough available in stock. Please adjust your cart to proceed."
 msgstr ""
 "Sie haben Artikel in Ihrem Warenkorb welche entweder nicht oder von welchen "
-"nicht genügende an Lager sind. Bitte korrigieren Sie Ihren Warenkorb um die "
+"nicht genügende am Lager sind. Bitte korrigieren Sie Ihren Warenkorb, um die "
 "Bestellung fortzusetzen."
 
 #. Default: "Allow checkout if this product is out of stock"
 #: extender.py:31
 msgid "label_outofstock_checkout"
-msgstr "Bestellung erlauben wenn dieses Produkt nicht an Lager ist"
+msgstr "Bestellung erlauben, wenn dieses Produkt nicht am Lager ist"

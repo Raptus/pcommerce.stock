@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-12-15 14:32+0000\n"
+"POT-Creation-Date: 2011-12-13 10:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgid "Stock information successfully stored"
 msgstr ""
 
 #. Default: "There are only ${number} items in stock"
-#: ./browser/cart.pt:62
+#: ./browser/cart.pt:67
 msgid "There are only ${number} items in stock"
 msgstr ""
 
@@ -50,21 +50,17 @@ msgid "There was an error when saving this stock entry"
 msgstr ""
 
 #. Default: "This item is currently out of stock"
-#: ./browser/cart.pt:54
+#: ./browser/cart.pt:59
 msgid "This item is currently out of stock"
 msgstr ""
 
-#. Default: "You have items in your cart which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
-#: ./browser/cart.pt:120
-msgid "You have items in your cart which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
-msgstr ""
-
-#. Default: "You have to be registered to check out your order, either ${log_in} if you already have an account or head over to the ${registration_form} if you don't."
-#: ./browser/cart.pt:113
-msgid "You have to be registered to check out your order, either ${log_in} if you already have an account or head over to the ${registration_form} if you don't."
+#. Default: "You have items in your cart, which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
+#: ./browser/cart.pt:129
+msgid "You have items in your cart, which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed."
 msgstr ""
 
 #. Default: "Allow checkout if this product is out of stock"
 #: ./extender.py:31
 msgid "label_outofstock_checkout"
 msgstr ""
+

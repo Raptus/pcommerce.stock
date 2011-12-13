@@ -15,6 +15,6 @@ class Checkout(BaseCheckout):
         cart = getMultiAdapter((self.context, self.request), name='cart')
         if cart.outofstock:
             statusmessage = IStatusMessage(self.request)
-            statusmessage.addStatusMessage(_(u'You have items in your cart which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed.'), 'error')
+            statusmessage.addStatusMessage(_(u'You have items in your cart, which are either out of stock or of which are not enough available in stock. Please adjust your cart to proceed.'), 'error')
             return self.request.RESPONSE.redirect('%s/@@cart' % self.context.absolute_url())
         return super(Checkout, self).__call__()

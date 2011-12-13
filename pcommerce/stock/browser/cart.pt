@@ -128,7 +128,7 @@
         </p>
         <p tal:condition="python: view.outofstock"
            i18n:translate="">
-          You have items in your cart which are either out of stock or of which are not enough available in stock.
+          You have items in your cart, which are either out of stock or of which are not enough available in stock.
           Please adjust your cart to proceed.
         </p>
         <div class="formControls">
