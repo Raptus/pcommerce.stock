@@ -1,24 +1,23 @@
+from persistent.dict import PersistentDict
+
 from Products.CMFCore.utils import getToolByName
 
 from pcommerce.core.config import INITIALIZED, CANCELED, FAILED, SENT, PROCESSED
 from pcommerce.core.interfaces import IOrderSentEvent, ISteps, IRequiredComponents, IOrderCanceledEvent, IOrderProcessingSuccessfulEvent
 from pcommerce.stock.interfaces import IStock
 
-INCREASED = 1
-DECREASED = 2
-
 def decreaseStockFromOrder(registry, order):
-    if getattr(order, 'stock_state', 0) is DECREASED:
-        return
+    if not hasattr(order, 'stock_decreased'):
+        order.stock_decreased = PersistentDict()
     uid_catalog = getToolByName(registry.context, 'uid_catalog')
     for product in order.products:
         stock = IStock(uid_catalog(UID=product[0])[0].getObject())
         if len(product[5]): # we have variations
             variations = [v[0] for v in product[5]]
-            stock.setVariationStock(stock.variationStock(variations)-product[3], variations)
+            stock.setVariationStock(stock.variationStock(variations)-int(product[3])+order.stock_decreased.get(product[0], 0), variations)
         else:
-            stock.setStock(stock.stock()-product[3])
-    order.stock_state = DECREASED
+            stock.setStock(stock.stock()-int(product[3])+order.stock_decreased.get(product[0], 0))
+        order.stock_decreased[product[0]] = int(product[3])
 
 def decreaseStockFromOrderSubscriber(event):
     order = event.order
@@ -29,17 +28,17 @@ def decreaseStockFromOrderSubscriber(event):
     decreaseStockFromOrder(event.registry, event.order)
 
 def increaseStockFromOrder(registry, order):
-    if getattr(order, 'stock_state', 0) is INCREASED:
-        return
+    if not hasattr(order, 'stock_decreased'):
+        order.stock_decreased = PersistentDict()
     uid_catalog = getToolByName(registry.context, 'uid_catalog')
     for product in order.products:
         stock = IStock(uid_catalog(UID=product[0])[0].getObject())
         if len(product[5]): # we have variations
             variations = [v[0] for v in product[5]]
-            stock.setVariationStock(stock.variationStock(variations)+product[3], variations)
+            stock.setVariationStock(stock.variationStock(variations)+order.stock_decreased.get(product[0], 0), variations)
         else:
-            stock.setStock(stock.stock()+product[3])
-    order.stock_state = INCREASED
+            stock.setStock(stock.stock()+order.stock_decreased.get(product[0], 0))
+        order.stock_decreased[product[0]] = 0
 
 def increaseStockFromOrderSubscriber(event):
     order = event.order

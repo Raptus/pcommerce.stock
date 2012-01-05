@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0b2 (2012-01-05)
+------------------
+
+* fixed bug in increasing/decreasing stock when manually switching between checkout and cart
+
 1.0b1 (2011-12-13)
 ------------------
 
